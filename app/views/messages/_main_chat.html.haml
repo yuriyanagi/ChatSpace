@@ -24,3 +24,9 @@
       .message
         おはよう
   .chat-main__message-form
+    .input-form
+      %input{type: "text", class: "text", placeholder: "type a message"}
+      %label{class: "image-icon"}
+        = icon('far', 'image')
+        %input{type: "file"}
+    %input{ type: "submit", value: "Send", class: "send-btn"}

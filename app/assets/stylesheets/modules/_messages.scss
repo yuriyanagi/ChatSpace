@@ -128,6 +128,39 @@
     &__message-form{
       height: 90px;
       background-color: #d2d2d2;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      .input-form{
+        width: 1000px;
+        margin-right: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        .text{
+          height: 50px;
+          width: calc(100vw - 300px - 95px - 100px);
+          border: 1px solid #fff;
+          padding-left: 10px;
+        }
+        .image-icon{
+          position: absolute;
+          right: 10px;
+          text-decoration: none;
+          input{
+            display: none;
+          }
+        }
+      }
+      .send-btn{
+        font-size: 16px;
+        color: #fff;
+        background-color: #38aef0;
+        border: 1px solid #38aef0;
+        padding-left: 30px;
+        padding-right: 30px;
+      }
     }
   }
 }
