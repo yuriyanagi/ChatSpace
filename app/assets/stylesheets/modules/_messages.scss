@@ -98,12 +98,32 @@
         padding-right: 20px;
         display: flex;
         align-items: center;
-
       }
     }
     &__message-list{
       height: calc(100vh - 100px - 90px);
       background-color: #fafafa;
+      padding-left: 40px;
+      .message-box{
+        margin-top: 35px;
+        margin-bottom: 46px;
+        .message-date{
+          display: flex;
+          margin-bottom: 12px;
+          .name{
+            font-size: 16px;
+            color: #333333;
+          }
+          .date-time{
+            font-size: 12px;
+            color: #999999;
+          }
+        }
+        .message{
+          font-size: 14px;
+          color: #434A54;
+        }
+      }
     }
     &__message-form{
       height: 90px;
