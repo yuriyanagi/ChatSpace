@@ -1,0 +1,32 @@
+.chat-main
+  .chat-main__group-info
+    .group-detail
+      .group-name
+        abc
+      .group-member
+        yuri,yun
+    =link_to "Edit", "#", class: "edit-btn"
+  .chat-main__message-list
+    .message-box
+      .message-date
+        .name
+          yuri
+        .date-time
+          2020/07/13
+      .message
+        おはよう
+    .message-box
+      .message-date
+        .name
+          yuri
+        .date-time
+          2020/07/13
+      .message
+        おはよう
+  .chat-main__message-form
+    .input-form
+      %input{type: "text", class: "text", placeholder: "type a message"}
+      %label{class: "image-icon"}
+        = icon('far', 'image')
+        %input{type: "file"}
+    %input{ type: "submit", value: "Send", class: "send-btn"}
