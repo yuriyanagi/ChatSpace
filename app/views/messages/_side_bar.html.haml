@@ -6,7 +6,7 @@
       .user-icon
         =link_to "#",class: "new-group__icon" do
           =icon('fas', 'edit')     
-        =link_to edit_user_registration_path,class: "account-edit__icon" do
+        =link_to edit_user_path(current_user),class: "account-edit__icon" do
           =icon('fas', 'cog')
   .side-bar__group-list
     .new-info
