@@ -4,18 +4,15 @@
       .user-name
         =current_user.name
       .user-icon
-        =link_to "#",class: "new-group__icon" do
+        =link_to new_group_path, class: "new-group__icon" do
           =icon('fas', 'edit')     
         =link_to edit_user_path(current_user),class: "account-edit__icon" do
           =icon('fas', 'cog')
   .side-bar__group-list
-    .new-info
-      .group-name
-        abc
-      .new-message
-        まだメッセージがありません
-    .new-info
-      .group-name
-        abc
-      .new-message
-        まだメッセージがありません
+    - current_user.groups.each do |group|
+      .new-info
+        = link_to '#' do
+          .group-name
+            = group.name
+          .new-message
+            メッセージはまだありません
