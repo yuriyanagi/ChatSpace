@@ -2,40 +2,20 @@
   .chat-main__group-info
     .group-detail
       .group-name
-        abc
+        =@group.name
       .group-member
-        yuri,yun
-    =link_to "Edit", "#", class: "edit-btn"
+        Member : 
+        - @group.users.each do |user|
+          =user.name
+    =link_to "Edit", edit_group_path(@group), class: "edit-btn"
   .chat-main__message-list
-    .message-box
-      .message-date
-        .name
-          yuri
-        .date-time
-          2020/07/13
-      .message
-        おはよう
-    .message-box
-      .message-date
-        .name
-          yuri
-        .date-time
-          2020/07/13
-      .message
-        おはよう
-  .chat-main__message-form
-    .input-form
-      %input{type: "text", class: "text", placeholder: "type a message"}
-      %label{class: "image-icon"}
-        = icon('far', 'image')
-        %input{type: "file"}
-    %input{ type: "submit", value: "Send", class: "send-btn"}
+    = render @messages
 
-  .Footer
+  .chat-main__message-form
     = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
-      .Form__contents
-        = f.text_field :content, class: 'Form__inputContent', placeholder: 'type a message'
-        =f.label :image, class: 'Form__inputImage' do
-          = icon('far', 'image', class: 'Form__icon')
-          =f.file_field :image, class: 'Hidden'
-      = f.submit 'Send', class: 'Form__submit'
+      .input-form
+        = f.text_field :content, class: "text", placeholder: "type a message"
+        = f.label :image, class: "image-icon" do
+          = icon('far', 'image', class:"Form__icon")
+          =f.file_field :image, class:"Hidden"
+      =f.submit "Send", class: "send-btn"
